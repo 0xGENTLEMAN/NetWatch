@@ -1,43 +1,25 @@
-Proje Adımları:
+🔹 Aşama 1 – Cihaz Tespiti ve Takibi (ARP Watcher)
 
-1. İzole Ağ Kurulumu
+Ağ taraması yap (arp -a gibi)
 
-    Tor ağı kullanarak veya kendi VPN/VM ağı oluşturarak
+MAC/IP eşleşmelerini logla
 
-    Python üzerinden Tor proxy ayarlarını yaparak internete erişim sağlamak
+Yeni cihaz gelince veya IP/MAC çakışması olursa uyar
 
-    Ağ trafiğini izlemek ve kontrol etmek
+Basit CLI çıktısı yeterli
 
+🔹 Aşama 2 – DNS Paket Dinleme (DNS Sniffer)
 
-2. Dark Web Site Gezinme ve Veri Toplama Botu
+Scapy ile ağda dönen DNS sorgularını dinle
 
-    Python ile Tor ağı üzerinden siteleri otomatik gezmek
+Hangi cihaz hangi domain'i sorguluyor, listele
 
-    HTML içeriklerini çekmek, kaydetmek
+Aynı domain’e farklı IP cevabı geliyorsa uyarı ver
 
-    Site içeriğine göre basit kategorilendirme yapmak (örn: sahte pasaport, kiralık katil vb.)
+🔹 Aşama 3 – Uyarı Sistemi & Loglama
 
+Uyarıları terminalde göster
 
-3. Kategori Bazlı Anahtar Kelime Araması
+Ayrıca logları bir log.json veya alerts.txt dosyasına kaydet
 
-    Belirlenen kategoriler içinde spesifik keyword listeleri oluşturmak
-
-    Botun bu keyword’leri içeren sayfaları veya içerikleri bulup raporlaması
-
-    İstersen gelişmiş NLP teknikleri ile iyileştirme
-
-
-4. Veri Saklama ve Raporlama (Opsiyonel)
-
-    Toplanan verileri JSON/SQLite gibi yapılarda depolamak
-
-    İstersen basit bir web arayüzü ile gösterim yapmak
-
-Projenin Detaylarında Esneklik
-
-  İstersen 1. veya 2. adımı detaylı yapıp ilerleyebilirsin
-
-  Kategorilendirmeyi basit tutup zamanla geliştirilebilir bırakabilirsin
-
-  Web arayüzü sonradan eklenebilir
-    
+(İleri seviye için: Telegram, mail veya basit web panel eklenebilir)    
