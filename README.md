@@ -1,25 +1,24 @@
-🔹 Aşama 1 – Cihaz Tespiti ve Takibi (ARP Watcher)
+**"This project is a work in progress, and I'm still improving it."**
+NETwatch 
 
-Ağ taraması yap (arp -a gibi)
+**NETwatch** is a simple Python tool that monitors your local network using ARP scans.  
+It detects:
+- 🆕 **New devices** joining the network  
+- ❌ **Devices leaving** the network  
+- 🔄 **MAC address changes** (possible spoofing)  
+- 🌐 **IP address changes** for the same MAC  
 
-MAC/IP eşleşmelerini logla
+---
 
-Yeni cihaz gelince veya IP/MAC çakışması olursa uyar
+Features
+- Automatic ARP scanning with [`scapy`](https://scapy.net/)
+- Saves device list to `devices.json`
+- Real-time detection of network changes
+- Easy to customize network interface & IP range
 
-Basit CLI çıktısı yeterli
+---
 
-🔹 Aşama 2 – DNS Paket Dinleme (DNS Sniffer)
-
-Scapy ile ağda dönen DNS sorgularını dinle
-
-Hangi cihaz hangi domain'i sorguluyor, listele
-
-Aynı domain’e farklı IP cevabı geliyorsa uyarı ver
-
-🔹 Aşama 3 – Uyarı Sistemi & Loglama
-
-Uyarıları terminalde göster
-
-Ayrıca logları bir log.json veya alerts.txt dosyasına kaydet
-
-(İleri seviye için: Telegram, mail veya basit web panel eklenebilir)    
+Requirements
+```bash
+pip install scapy
+```
